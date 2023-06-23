@@ -70,18 +70,18 @@ const Tours = () => {
                             <li className="single-tour">{tour.name} - <span className="tour-price">{`${tour.price}$ `}</span>
                                 <button onClick={() => { setIds(tour.id); setMore(true); setShowMore(tour.info) }}>Show more</button>
                                 <button onClick={() => { setMore(false) }}>See less</button>
-                                <button className="delete-btn" onClick={() => { deleteTour(tour.id) }}>Delete</button>
+                                <button className="delete-btn" id={`delete-btn-${tour.id}`} onClick={() => { deleteTour(tour.id) }}>Delete</button>
                             </li>
                             <br />
                             {
                                 !more &&
-                                <div className="tour-info">
+                                <div className="tour-info" id={`tour-item-para-${tour.id}`}>
                                     {tour.info.substring(0, 200)}
                                 </div>
                             }
                             {
 
-                                more ? <div className="tour-info">
+                                more ? <div className="tour-info" id={`tour-item-para-${tour.id}`}>
                                     {
                                         ids == tour.id ? showMore : tour.info.substring(0, 200)
                                     }
