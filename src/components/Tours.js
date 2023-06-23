@@ -68,7 +68,7 @@ const Tours = () => {
                     allTours.length ? allTours.map((tour) => (
                         <div>
                             <li className="single-tour">{tour.name} - <span className="tour-price">{`${tour.price}$ `}</span>
-                                <button onClick={() => { setIds(tour.id); setMore(true); setShowMore(tour.info) }}>Show more</button>
+                                <button id={`see-more-${tour.id}`} onClick={() => { setIds(tour.id); setMore(true); setShowMore(tour.info) }}>Show more</button>
                                 <button onClick={() => { setMore(false) }}>See less</button>
                                 <button className="delete-btn" id={`delete-btn-${tour.id}`} onClick={() => { deleteTour(tour.id) }}>Delete</button>
                             </li>
